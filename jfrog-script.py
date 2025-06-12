@@ -1,3 +1,40 @@
+# JFrog Port Integration Script
+# 
+# This script synchronizes JFrog Artifactory and Xray data with Port's developer portal.
+# It imports repositories, builds, projects, container images, and security vulnerabilities.
+#
+# PREREQUISITES:
+# - Python 3.7+
+# - JFrog Artifactory with Xray integration
+# - Port account with API access
+# - JFrog Access Token with appropriate permissions
+#
+# SETUP:
+# 1. Install dependencies: pip install python-dotenv requests
+# 2. Create .env file with required credentials:
+#    PORT_CLIENT_ID=your_port_client_id
+#    PORT_CLIENT_SECRET=your_port_client_secret
+#    JFROG_ACCESS_TOKEN=your_jfrog_access_token
+#    JFROG_HOST_URL=https://your-instance.jfrog.io
+# 3. Import Port blueprints from provided JSON files:
+#    - jfrog-projects.json
+#    - jfrog-container-vulns.json
+#    - jfrog-baseimage-vulns.json
+#    - jfrog-repository.json
+#    - jfrog-build.json
+#    - jfrog-project.json
+#    - jfrog-container-image.json
+#
+# USAGE:
+# python jfrog-script.py
+#
+# The script will:
+# 1. Sync JFrog repositories to Port
+# 2. Sync JFrog builds to Port
+# 3. Sync JFrog projects with roles to Port
+# 4. Discover and sync container images to Port
+# 5. Scan images for vulnerabilities and sync to Port
+
 # Dependencies to install
 # pip install python-dotenv
 # pip install requests
