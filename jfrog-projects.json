@@ -1,0 +1,42 @@
+{
+  "identifier": "jfrogProject",
+  "description": "This blueprint represents an artifact in our JFrog project",
+  "title": "JFrog Project",
+  "icon": "JfrogXray",
+  "schema": {
+    "properties": {
+      "key": {
+        "type": "string",
+        "title": "Key",
+        "description": "Project identifier key"
+      },
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "description": "Display name of the project"
+      },
+      "description": {
+        "type": "string",
+        "title": "Description",
+        "description": "Project description"
+      },
+      "adminPrivileges": {
+        "type": "object",
+        "title": "Admin Privileges",
+        "description": "Administrative privileges configuration for the project"
+      },
+      "roles": {
+        "items": {
+          "type": "object"
+        },
+        "type": "array",
+        "title": "Roles"
+      }
+    },
+    "required": []
+  },
+  "mirrorProperties": {},
+  "calculationProperties": {},
+  "aggregationProperties": {},
+  "relations": {}
+}

@@ -1,0 +1,107 @@
+{
+    "identifier": "baseImageVulnerability",
+    "title": "JFrog Base Image Vulnerability",
+    "icon": "JfrogXray",
+    "schema": {
+      "properties": {
+        "cve": {
+          "title": "CVE",
+          "description": "Common Vulnerabilities and Exposures identifier",
+          "type": "string"
+        },
+        "cwe": {
+          "title": "CwE",
+          "description": "Common Weakness Enumeration identifier",
+          "type": "array"
+        },
+        "severity": {
+          "title": "Severity",
+          "description": "Vulnerability severity level",
+          "type": "string",
+          "enum": ["Critical", "High", "Medium", "Low", "Informational", "Unknown"]
+        },
+        "status": {
+          "title": "Status",
+          "description": "Current status of the vulnerability",
+          "type": "string",
+          "enum": ["Open", "Fixed", "Ignored", "Not Applicable"]
+        },
+        "component": {
+          "title": "Component",
+          "description": "Affected component/package name",
+          "type": "string"
+        },
+        "baseImage": {
+          "title": "Base Image",
+          "description": "Base image name (e.g., ubuntu, alpine, node)",
+          "type": "string"
+        },
+        "layer": {
+          "title": "Layer",
+          "description": "Container layer where vulnerability was found",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "Detailed description of the vulnerability",
+          "type": "string",
+          "format": "markdown"
+        },
+        "summary": {
+          "title": "Summary",
+          "description": "Brief summary of the vulnerability",
+          "type": "string"
+        },
+        "created": {
+          "title": "Created",
+          "description": "When the vulnerability was created",
+          "type": "string",
+          "format": "date-time"
+        },
+        "cvssScore": {
+          "title": "CVSS Score",
+          "description": "Common Vulnerability Scoring System score",
+          "type": "number"
+        },
+        "issueId": {
+          "title": "Issue ID",
+          "description": "Internal issue identifier from JFrog Xray",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "description": "Vulnerability data provider",
+          "type": "string"
+        },
+        "packageType": {
+          "title": "Package Type",
+          "description": "Type of package containing the vulnerability",
+          "type": "string"
+        },
+        "references": {
+          "title": "References",
+          "description": "External references for the vulnerability",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cve",
+        "severity",
+        "status",
+        "component",
+        "baseImage",
+        "created"
+      ]
+    },
+    "mirrorProperties": {},
+    "calculationProperties": {},
+    "aggregationProperties": {},
+    "relations": {
+    "containerImage": {
+      "title": "Container Image",
+      "target": "jfrogContainerImage", 
+      "required": false,
+      "many": false
+    }
+  }
+  }

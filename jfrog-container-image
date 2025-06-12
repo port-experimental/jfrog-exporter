@@ -1,0 +1,88 @@
+{
+  "identifier": "jfrogContainerImage",
+  "title": "JFrog Container Image",
+  "icon": "JfrogXray",
+  "schema": {
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name"
+      },
+      "tag": {
+        "type": "string",
+        "title": "Tag"
+      },
+      "fullName": {
+        "type": "string",
+        "title": "Full Name"
+      },
+      "repository": {
+        "type": "string",
+        "title": "Repository"
+      },
+      "registryUrl": {
+        "type": "string",
+        "title": "Registry URL",
+        "format": "url"
+      },
+      "imageSize": {
+        "type": "string",
+        "title": "Image Size"
+      },
+      "architecture": {
+        "type": "string",
+        "title": "Architecture"
+      },
+      "os": {
+        "type": "string",
+        "title": "Operating System"
+      },
+      "createdAt": {
+        "type": "string",
+        "title": "Created At",
+        "format": "date-time"
+      },
+      "lastScanned": {
+        "type": "string",
+        "title": "Last Scanned",
+        "format": "date-time"
+      },
+      "vulnerabilityCount": {
+        "type": "number",
+        "title": "Total Vulnerabilities"
+      },
+      "criticalVulns": {
+        "type": "number",
+        "title": "Critical Vulnerabilities"
+      },
+      "highVulns": {
+        "type": "number",
+        "title": "High Vulnerabilities"
+      },
+      "mediumVulns": {
+        "type": "number",
+        "title": "Medium Vulnerabilities"
+      },
+      "lowVulns": {
+        "type": "number",
+        "title": "Low Vulnerabilities"
+      }
+    },
+    "required": [
+      "name",
+      "tag",
+      "fullName"
+    ]
+  },
+  "mirrorProperties": {},
+  "calculationProperties": {},
+  "aggregationProperties": {},
+  "relations": {
+    "jfrog_repository": {
+      "title": "Jfrog Repository",
+      "target": "jfrogRepository",
+      "required": false,
+      "many": false
+    }
+  }
+}

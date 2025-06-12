@@ -1,0 +1,55 @@
+{
+    "identifier": "jfrogRepository",
+    "description": "This blueprint represents a repository on Jfrog",
+    "title": "JFrog Repository",
+    "icon": "JfrogXray",
+    "schema": {
+      "properties": {
+        "key": {
+          "type": "string",
+          "title": "Key",
+          "description": "Name of the repository"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "description": "Description of the repository"
+        },
+        "type": {
+          "type": "string",
+          "title": "Repository Type",
+          "description": "Type of the repository",
+          "enum": [
+            "LOCAL",
+            "REMOTE",
+            "VIRTUAL",
+            "FEDERATED",
+            "DISTRIBUTION"
+          ],
+          "enumColors": {
+            "LOCAL": "blue",
+            "REMOTE": "bronze",
+            "VIRTUAL": "darkGray",
+            "FEDERATED": "green",
+            "DISTRIBUTION": "lightGray"
+          }
+        },
+        "url": {
+          "type": "string",
+          "title": "Repository URL",
+          "description": "URL to the repository",
+          "format": "url"
+        },
+        "packageType": {
+          "type": "string",
+          "title": "Package type",
+          "description": "Type of the package"
+        }
+      },
+      "required": []
+    },
+    "mirrorProperties": {},
+    "calculationProperties": {},
+    "aggregationProperties": {},
+    "relations": {}
+  }
